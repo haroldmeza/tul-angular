@@ -1,0 +1,8 @@
+ul{
+    background: var(--header-menu);
+    display: flex;
+    justify-content: flex-end;
+    li:first-child{
+        margin-right: auto;
+    }
+}

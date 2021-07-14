@@ -1,0 +1,51 @@
+<form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+    <h2 class="title-form">
+        Registro
+    </h2>
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="email">E-mail</nz-form-label>
+      <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="No es un e-mail valido">
+        <input nz-input formControlName="email" id="email" />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="password" nzRequired>Contraseña</nz-form-label>
+      <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Por favor escriba su contraseña!" class="wrapper-eye">
+        <div class="password-container">
+          <input nz-input [type]="showPassword ? 'input' : 'password'" id="password" formControlName="password" />
+          <button nz-button nzType="default" (click)="togglePassword($event)">
+            <i nz-icon [nzType]="showPassword ? 'eye' : 'eye-invisible'"></i>
+          </button>
+        </div>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item nz-row class="register-area">
+        <nz-form-control [nzSpan]="6" [nzOffset]="6">
+          <label nz-checkbox formControlName="agree">
+            <span>
+              He leido el
+            </span>
+          </label>
+        </nz-form-control>
+        <a class="ml-1" (click)="showModal = true">acuerdo</a>
+      </nz-form-item>
+      <nz-form-item nz-row class="register-area">
+        <nz-form-control [nzSpan]="14" [nzOffset]="6">
+          <button nz-button nzType="primary" [disabled]="this.validateForm.invalid || !this.validateForm.touched || !getAcceptAgreement('agree')">Registrarse</button>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-alert *ngIf="alertMessage"
+        [nzType]="alertType"
+        [nzMessage]="alertTitle"
+        [nzDescription]="error"
+    >
+    </nz-alert>
+</form>
+
+<nz-modal [(nzVisible)]="showModal" nzTitle="Acuerdo" (nzOnCancel)="showModal = !showModal" [nzFooter]="null">
+    <ng-container *nzModalContent>
+        <p>Debes ser positivo</p>
+        <p>Proactivo</p>
+        <p>Buen compañero</p>
+    </ng-container>
+</nz-modal>

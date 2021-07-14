@@ -1,0 +1,10 @@
+<div class="container">
+    <div class="flex">
+        <app-product *ngFor="let product of productosInOrder | async" 
+            [product]="product.product" 
+            [quantity]="product.quantity" 
+            class="item-flex" 
+            [showAdd]="false">
+        </app-product>
+    </div>
+</div>

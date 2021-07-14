@@ -1,0 +1,21 @@
+<ul nz-menu nzMode="horizontal">
+  <li nz-menu-item (click)="goHome()">
+    <i nz-icon nzType="home"></i>
+    Home
+  </li>
+    <li nz-menu-item *ngIf="!user; else elseBlock" (click)="iniciarSesion()">
+      <i nz-icon nzType="login"></i>
+      Iniciar sesion
+    </li>
+    <ng-template #elseBlock>
+      <li nz-menu-item (click)="cerrarSesion()">
+        <i nz-icon nzType="logout"></i>
+        Cerrar sesion
+      </li>
+    </ng-template>
+    <a nz-menu-item routerLink="cart">
+      <nz-badge [nzCount]="quantityProductsInCart | async">
+        <i nz-icon nzType="shopping-cart" style="font-size: 27px"></i>
+      </nz-badge>
+    </a>
+</ul>

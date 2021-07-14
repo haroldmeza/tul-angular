@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="flex-column">
+        <app-product *ngFor="let product of products | async" 
+            [product]="product.product" 
+            [quantity]="product.quantity"
+            class="mx-auto" 
+            [showMinus]="product.quantity > 0" 
+            (onSubtractProduct) = "substractProduct($event)"
+            (onDeleteProduct) = "deleteProduct($event)"
+            showDelete="true">
+        </app-product>
+    </div>
+    <div class="flex flex-end" *ngIf="user && ((products | async ).length > 0)">
+        <button nz-button nzType="dashed" (click)="crearOrden()">
+            <i nz-icon nzType="file-add"></i>
+            <span>Crear orden</span>
+        </button>
+    </div>
+</div>

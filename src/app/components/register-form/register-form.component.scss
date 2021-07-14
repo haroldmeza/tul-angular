@@ -1,0 +1,27 @@
+:host{
+    form{
+        max-width: 400px;
+        min-width: 400px;
+        padding: 40px 20px;
+        background-color: white;
+        margin: 0 auto;
+        .register-area{
+            display: flex;
+            justify-content: flex-start;
+            ::ng-deep{
+                .ant-form-item-control-input{
+                    display: inline-block;
+                    width: 100px;
+                }
+            }
+        }
+    }
+}
+
+.password-container{
+    display: flex !important;
+    justify-content: space-between;
+    input{
+        flex-grow: 1;
+    }
+}

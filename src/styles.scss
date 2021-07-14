@@ -1,1 +1,120 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~ng-zorro-antd/ng-zorro-antd.min.css";
+
+@import "~ng-zorro-antd/style/index.min.css"; /* Import base styles */
+@import "~ng-zorro-antd/button/style/index.min.css";  /* Import one component's styles */
+
+:root{
+    --header-menu: white;
+    --border-product : rgb(231, 231, 231);
+}
+
+h2.title-form{
+    font-size: 24px;
+    color: black;
+}
+
+.ml-1{
+    margin-left: 5px;
+}
+.ml-2{
+    margin-left: 10px;
+}
+
+.mt-1{
+    margin-top: 5px;
+}
+.mt-2{
+    margin-top: 10px;
+}
+
+.mr-1{
+    margin-right: 5px;
+}
+.mr-2{
+    margin-right: 10px;
+}
+
+.ant-layout-header{
+    background: var(--header-menu);
+}
+
+.mx-auto{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container {
+    flex-grow: 1;
+    margin: 0 auto;
+    position: relative;
+    width: auto;
+}
+
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+    .item-flex{
+        width: 100%;
+    }
+    &-column{
+        flex-direction: column;
+    }
+}
+.flex-end{
+    justify-content: flex-end;
+}
+.product{
+    border:1px solid var(--border-product);
+    margin: 10px;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    display: flex;
+    .container-info{
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        h2.name-product{
+            text-transform: uppercase;
+            font-size: 24px;
+        }
+        p.descripcion{
+            font-size: 14px;
+        }
+        p.sku{
+            font-size: 11px;
+            text-transform: uppercase;
+        }
+    }
+    .container-action{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        button{
+            min-width: 104px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+    }
+}
+@media screen and (min-width: 1024px){
+    .container {
+        max-width: 960px;
+    }
+    .item-flex{
+        width: 50% !important;
+    }
+}
+
+@media screen and (min-width: 1216px){
+    .container:not(.is-max-desktop) {
+        max-width: 1152px;
+    }
+}
+
+@media screen and (min-width: 1408px){
+    .container:not(.is-max-desktop):not(.is-max-widescreen) {
+        max-width: 1344px;
+    }
+}

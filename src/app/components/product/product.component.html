@@ -1,0 +1,24 @@
+<div class="product">
+    <div class="container-info">
+        <h2 class="name-product">{{product.nombre}}
+            <nz-badge nzStandalone [nzCount]="quantity" *ngIf="quantity > 0"></nz-badge>
+        </h2>
+        <p class="descripcion">{{product.descripcion}}</p>
+        <p class="sku">{{product.sku}}</p>   
+    </div>
+    <div class="container-action">
+        <button nz-button nzType="default" (click)="addToCart()" *ngIf="showAdd">
+            <i nz-icon nzType="plus"></i>
+            <span>Agregar</span>
+        </button>
+        <button nz-button nzType="default" (click)="subtractProduct()" *ngIf="showMinus" class="mt-2">
+            <i nz-icon nzType="minus"></i>
+            <span>Restar</span>
+        </button>
+        <button nz-button nzType="default" (click)="deleteProduct()" *ngIf="showDelete" class="mt-2">
+            <i nz-icon nzType="delete"></i>
+            <span>Eliminar</span>
+        </button>
+    </div>
+</div>
+

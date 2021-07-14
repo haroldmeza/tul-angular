@@ -1,0 +1,23 @@
+
+nz-spin{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    nz-alert{
+        height: 100vw;
+    }
+}
+:host ::ng-deep{
+        .ant-spin{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            height: 100vw !important;
+        }
+        .ant-alert{
+            height: 100vw;
+        }
+}
