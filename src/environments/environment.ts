@@ -4,14 +4,7 @@
 
 export const environment = {
   production: false,
-  firebase : {
-    apiKey: "AIzaSyBFexQOj7U5s4wFA-MKOmircE2U9PLdRRY",
-    authDomain: "tul-cart.firebaseapp.com",
-    projectId: "tul-cart",
-    storageBucket: "tul-cart.appspot.com",
-    messagingSenderId: "824174271690",
-    appId: "1:824174271690:web:27b0ee3f1152a2cedbe833"
-  }
+  
 };
 
 /*
